@@ -1,17 +1,21 @@
-# Fencing_Tracking_Example
+# Fencing Tracking Example
 
-Here is a link to the [Google Drive](https://drive.google.com/drive/folders/1jS4KTCmH0EG9-OgP0DVX9s42nCZY67YI?usp=sharing) folder containing the data files.
+The purpose of this project is to showcase how ChatGPT can serve as a valuable programming aid, particularly when working with unfamiliar libraries.
 
-I used ChatGPT to show how it can be used to do the vast majority of coding for a Google Colab notebook that analyzes a Fencing Action and acts as the fencing referee to determine the touch. To do this I broke the task into 3 parts, Data Collection, Detection and Tracking and Model Training.
+Here is a link to the [Google Drive folder](https://drive.google.com/drive/folders/1jS4KTCmH0EG9-OgP0DVX9s42nCZY67YI?usp=sharing) containing the data files.
 
-# Data Collection
+I utilized ChatGPT to demonstrate how it can effectively handle the majority of coding tasks in a Google Colab notebook that analyzes a Fencing Action and acts as a fencing referee to determine touches. To accomplish this, I divided the project into three main sections: Data Collection, Detection and Tracking, and Model Training.
 
-In Data Collection, I used the Red Strip, [Day 2 of European Fencing Championships](https://www.youtube.com/watch?v=BDMml_HVcz8). I used the overlay from the video to detect when touches were scored and then detected the scores using the same overlay. I then sorted the Epee and Saber clips by scores that resulted in a point and the clock reading 3:00 minutes.
+## Data Collection
 
-# Detection and Tracking
+For Data Collection, I leveraged footage from the Red Strip captured during [Day 2 of the European Fencing Championships](https://www.youtube.com/watch?v=BDMml_HVcz8). Using the overlay from the video, I detected instances when touches were scored and extracted the corresponding scores. Next, I sorted the Epee and Saber clips based on scores resulting in a point and when the clock read 3:00 minutes.
 
-Taking the clips from Data Collection, I used [YoloV8 by Ultralytics](https://docs.ultralytics.com/) along with [Roboflow](https://roboflow.com/) to help with the datasets, to create a custom detection model. I then used this model with some basic tracking analysis to map the paths of the fencers' bellguards. From the bellguard positions I then derived the acceleration of the bellguards and combined the bellguard x_position acceleration with the frames that the colored lights turned on into a comma separated values (csv) file. To the csv file I added on the touch for each clip that was taken from the analysis of the overlay earlier.
+## Detection and Tracking
 
-# Model Training
+Using the clips obtained during Data Collection, I employed [YoloV8 by Ultralytics](https://docs.ultralytics.com/) in conjunction with [Roboflow](https://roboflow.com/) to assist with dataset management and create a customized detection model. Subsequently, I utilized this model, along with basic tracking analysis, to trace the paths of the fencers' bellguards. By analyzing the bellguard positions, I derived the acceleration of the bellguards and combined the bellguard x_position acceleration with the frames when the colored lights turned on. This information was then saved in comma-separated values (CSV) files. Additionally, I appended the touch data for each clip, which was obtained from the overlay analysis conducted earlier.
 
-I used a Gate Recurrent Unit model as recommended by ChatGPT to input the data. The model was quickly trained, I assume to do the simplicity of the data and relatively few data inputs. I then applied the model to Clips 1,2,3 taken from the [Blue Piste](https://www.youtube.com/watch?v=AFmK9fSg-Bk) at the same event.
+## Model Training
+
+Following the recommendations of ChatGPT, I employed a Gate Recurrent Unit (GRU) model to process the collected data. Due to the simplicity of the data and a relatively small number of inputs, the model trained quickly. Subsequently, I applied the trained model to analyze Clips 1, 2, and 3, which were extracted from the [Blue Piste footage](https://www.youtube.com/watch?v=AFmK9fSg-Bk) captured during the same event.
+
+By following this approach, I demonstrated how ChatGPT can be a valuable asset in automating various aspects of a fencing analysis workflow.
