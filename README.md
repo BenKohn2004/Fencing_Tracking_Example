@@ -1,6 +1,6 @@
 # Fencing Tracking Example
 
-The purpose of this project is to showcase how ChatGPT can serve as a valuable programming aid, particularly when working with unfamiliar libraries.
+The purpose of this project is to showcase how ChatGPT can serve as a valuable programming aid, particularly when working with unfamiliar libraries. The videos are quite long and are meant so that someone could follow along and reproduce the process if so desired.
 
 Here is a link to the [Google Drive folder](https://drive.google.com/drive/folders/1jS4KTCmH0EG9-OgP0DVX9s42nCZY67YI?usp=sharing) containing the data files.
 
